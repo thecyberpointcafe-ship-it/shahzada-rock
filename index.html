@@ -1,80 +1,610 @@
-THE CYBER POINT CAFE
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Shahzada Rock | THE CYBER POINT CAFE</title>
+
+<meta name="description" content="THE CYBER POINT CAFE - भूमि रिकॉर्ड एवं सरकारी ऑनलाइन सेवाओं का एक ही समाधान।">
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,"Noto Sans Devanagari",sans-serif;
+background:#f3f8fc;
+color:#123c5d
+}
+.top{
+background:linear-gradient(120deg,#dff2ff,#fff 50%,#dcefff);
+padding:18px 22px 15px;
+text-align:center;
+border-bottom:5px solid #064d86
+}
+.brand{
+font-size:clamp(30px,5.3vw,64px);
+font-weight:950;
+color:#064879;
+line-height:1
+}
+.brand b{color:#e32127}
+.tag{
+display:inline-block;
+margin-top:12px;
+background:#064d86;
+color:#fff;
+border-radius:30px;
+padding:9px 28px;
+font-size:clamp(15px,2vw,23px);
+font-weight:800
+}
+.owner{
+margin-top:9px;
+font-size:18px;
+font-weight:800;
+color:#17496f
+}
+.nav{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+background:#064d86
+}
+.nav a{
+color:#fff;
+text-decoration:none;
+text-align:center;
+padding:14px 8px;
+font-weight:800
+}
+.wrap{
+max-width:1450px;
+margin:auto;
+padding:18px
+}
+.hero{
+display:grid;
+grid-template-columns:1.2fr .8fr 1.2fr;
+gap:16px
+}
+.panel{
+min-height:180px;
+border-radius:13px;
+background:#fff;
+border:1px solid #dce7ef;
+box-shadow:0 5px 18px #16466b22;
+padding:20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center
+}
+.mapshape{font-size:76px}
+.panel h2{
+margin:5px 0;
+color:#07528c;
+font-size:32px
+}
+.panel p{
+margin:5px 0;
+font-size:18px;
+font-weight:700
+}
+.badge{
+background:#e21f2f;
+color:#fff;
+border-radius:22px;
+padding:7px 18px;
+font-size:20px;
+font-weight:900
+}
+.green{
+background:#087a42;
+color:#fff;
+border-radius:18px;
+padding:7px 18px;
+font-weight:800
+}
+.services,.tools{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:9px 14px;
+margin-top:18px
+}
+.btn,.tool{
+min-height:58px;
+display:flex;
+align-items:center;
+gap:10px;
+justify-content:space-between;
+color:#fff;
+text-decoration:none;
+padding:10px 13px;
+border-radius:10px;
+font-size:17px;
+font-weight:850;
+box-shadow:0 3px 8px #1233;
+background:linear-gradient(100deg,#05609a,#087fc2)
+}
+.btn:nth-child(4n+2){
+background:linear-gradient(100deg,#5532d7,#7937df)
+}
+.btn:nth-child(4n+3){
+background:linear-gradient(100deg,#d9184d,#ee276c)
+}
+.btn:nth-child(4n+4){
+background:linear-gradient(100deg,#087f95,#13a6ad)
+}
+.tool{
+justify-content:center;
+background:#07528c
+}
+.tool:nth-child(2){background:#6b35d9}
+.tool:nth-child(3){background:#e3265d}
+.tool:nth-child(4){background:#0b8a9b}
+.ico{
+width:40px;
+height:40px;
+min-width:40px;
+border-radius:50%;
+display:grid;
+place-items:center;
+background:#ffffff33;
+font-size:22px
+}
+.txt{flex:1}
+.go{
+width:27px;
+height:27px;
+border-radius:50%;
+background:#fff;
+color:#07528c;
+display:grid;
+place-items:center
+}
+.sectionTitle{
+margin:22px 0 8px;
+text-align:center;
+color:#07528c;
+font-size:25px;
+font-weight:900
+}
+.note{
+margin-top:16px;
+background:#fff;
+border-left:5px solid #0b76b5;
+padding:12px 15px;
+border-radius:8px;
+color:#49677d
+}
+footer{
+margin-top:18px;
+background:#063f70;
+color:#fff;
+text-align:center;
+padding:18px;
+font-weight:800
+}
+
+/* PASSWORD */
+.loginGate{
+position:fixed;
+inset:0;
+z-index:99999;
+display:grid;
+place-items:center;
+background:radial-gradient(circle at top,#1684c8,#063f70 70%);
+padding:20px
+}
+.loginBox{
+width:min(430px,94vw);
+background:#fff;
+border-radius:22px;
+padding:34px 28px;
+text-align:center;
+box-shadow:0 20px 70px #0008
+}
+.loginLogo{
+font-size:26px;
+font-weight:950;
+color:#07528c
+}
+.loginLogo b{color:#e32127}
+.passInput{
+width:100%;
+padding:14px;
+border:2px solid #cbdde9;
+border-radius:12px;
+font-size:18px
+}
+.loginBtn{
+width:100%;
+margin-top:13px;
+padding:14px;
+border:0;
+border-radius:12px;
+background:#07528c;
+color:#fff;
+font-size:18px;
+font-weight:900
+}
+.loginMsg{
+min-height:24px;
+margin-top:10px;
+color:#d9184d;
+font-weight:800
+}
+
+@media(max-width:1050px){
+.services,.tools{grid-template-columns:repeat(2,1fr)}
+.hero{grid-template-columns:1fr 1fr}
+.land{grid-column:1/-1}
+}
+
+@media(max-width:700px){
+.nav{grid-template-columns:repeat(3,1fr)}
+.hero,.services,.tools{grid-template-columns:1fr}
+.land{grid-column:auto}
+.brand{font-size:32px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div class="loginGate" id="loginGate">
+<div class="loginBox">
+
+<div class="loginLogo">
+THE <b>CYBER POINT</b> CAFE
+</div>
+
+<h2>🔐 सुरक्षित प्रवेश</h2>
+
+<p>वेबसाइट खोलने के लिए पासवर्ड डालें</p>
+
+<input
+id="sitePassword"
+class="passInput"
+type="password"
+placeholder="Password"
+>
+
+<button class="loginBtn" id="loginBtn">
+साइट खोलें
+</button>
+
+<div class="loginMsg" id="loginMsg"></div>
+
+</div>
+</div>
+
+
+<header class="top">
+
+<div class="brand">
+THE <b>CYBER POINT</b> CAFE
+</div>
+
+<div class="tag">
 भूमि रिकॉर्ड एवं सरकारी ऑनलाइन सेवाओं का एक ही समाधान
+</div>
+
+<div class="owner">
 Shahzada Rock | 📞 8540854630
-⌂ होम
+</div>
+
+</header>
+
+
+<nav class="nav">
+
+<a href="#">⌂ होम</a>
+
+<a href="#services">
 ▤ सभी सेवाएं
+</a>
+
+<a href="#services">
 ◎ महत्वपूर्ण वेबसाइट
+</a>
+
+<a href="#services">
 ⓘ जानकारी
+</a>
+
+<a href="#services">
 ▣ फॉर्म/PDF Tools
+</a>
+
+<a href="#contact">
 ☎ संपर्क करें
-🗺️
-बिहार
-राज्य की महत्वपूर्ण ऑनलाइन सेवाएँ
+</a>
+
+</nav>
+
+
+<main class="wrap">
+
+<section class="hero">
+
+<div class="panel">
+
+<div class="mapshape">🗺️</div>
+
+<h2>बिहार</h2>
+
+<p>
+राज्य की महत्वपूर्ण ऑनलाइन सेवाएँ<br>
 अब एक ही जगह
+</p>
 
-👤
-Shahzada Rock
+</div>
+
+
+<div class="panel">
+
+<div class="mapshape">👤</div>
+
+<h2>Shahzada Rock</h2>
+
+<span class="badge">
 ☎ 8540854630
+</span>
+
+<p>
 आपकी सुविधा के लिए हमेशा तत्पर
+</p>
 
-🏠
-भूमि से संबंधित सेवाएँ
+</div>
+
+
+<div class="panel">
+
+<div class="mapshape">🏠</div>
+
+<h2>भूमि से संबंधित सेवाएँ</h2>
+
+<p>
 जमीन के काम अब और भी आसान
+</p>
 
+<span class="green">
 ऑनलाइन सेवा उपलब्ध
+</span>
+
+</div>
+
+</section>
+
+
+<div class="sectionTitle">
 सभी ऑनलाइन सेवाएँ
-📄
-जमाबंदी
-›
-₹
-रसीद / लगान
-›
-▣
-LPC APPLY
-›
-📚
-पुराना खतियान
-›
-📘
-नया खतियान
-›
-📝
-E-NIBANDAN ENTRY
-›
-🏠
-आवासीय प्रमाण पत्र
-›
-₹
-आय प्रमाण पत्र
-›
-🪪
-जाति प्रमाण पत्र
-›
-📍
-E-Mapi
-›
-🪪
-Aadhaar Mobile No. Check
-›
-⬇
-Aadhaar Card Download
-›
-◉
-My WhatsApp
-›
-📖
-जमाबंदी — 22 भाषाओं में
-›
-✎
-Parimarjan Plus
-›
-⌁
-Parimarjan Plus Track
-›
+</div>
+
+
+<section id="services" class="services">
+
+
+<a class="btn"
+href="https://emutation.bihar.gov.in/biharBhumireport/ViewJamabandi">
+<span class="ico">📄</span>
+<span class="txt">जमाबंदी</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://www.bhulagan.bihar.gov.in/citizen/search.aspx">
+<span class="ico">₹</span>
+<span class="txt">रसीद / लगान</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://biharbhumi.bihar.gov.in/Biharbhumi/UserLogin">
+<span class="ico">▣</span>
+<span class="txt">LPC APPLY</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://bhuabhilekh.bihar.gov.in/login?ref=aW5kZXgucGhw">
+<span class="ico">📚</span>
+<span class="txt">पुराना खतियान</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://land.bihar.gov.in/Ror2025/ViewRor.aspx?DistCode=22&SubDivCode=1&CircleCode=11">
+<span class="ico">📘</span>
+<span class="txt">नया खतियान</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://enibandhan.bihar.gov.in/homePage">
+<span class="ico">📝</span>
+<span class="txt">E-NIBANDAN ENTRY</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://serviceonline.bihar.gov.in/">
+<span class="ico">🏠</span>
+<span class="txt">आवासीय प्रमाण पत्र</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://serviceonline.bihar.gov.in/">
+<span class="ico">₹</span>
+<span class="txt">आय प्रमाण पत्र</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://serviceonline.bihar.gov.in/">
+<span class="ico">🪪</span>
+<span class="txt">जाति प्रमाण पत्र</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://emapi.bihar.gov.in/default.aspx?ReturnUrl=%2f">
+<span class="ico">📍</span>
+<span class="txt">E-Mapi</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://abha.abdm.gov.in/abha/v3/register/aadhaar">
+<span class="ico">🪪</span>
+<span class="txt">Aadhaar Mobile No. Check</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://myaadhaarbeta.uidai.gov.in/genericDownloadAadhaar/en">
+<span class="ico">⬇</span>
+<span class="txt">Aadhaar Card Download</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://web.whatsapp.com/">
+<span class="ico">◉</span>
+<span class="txt">My WhatsApp</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransViewJamabandi.aspx">
+<span class="ico">📖</span>
+<span class="txt">जमाबंदी — 22 भाषाओं में</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://parimarjanplus.bihar.gov.in/ParimarjanNew/userDashboard.aspx">
+<span class="ico">✎</span>
+<span class="txt">Parimarjan Plus</span>
+<span class="go">›</span>
+</a>
+
+
+<a class="btn"
+href="https://parimarjanplus.bihar.gov.in/ParimarjanNew/trackapplication.aspx">
+<span class="ico">⌁</span>
+<span class="txt">Parimarjan Plus Track</span>
+<span class="go">›</span>
+</a>
+
+</section>
+
+
+<div class="sectionTitle">
 PDF एवं IMAGE TOOLS
+</div>
+
+
+<section class="tools">
+
+<a class="tool"
+href="https://www.ilovepdf.com/jpg_to_pdf">
 JPG to PDF
+</a>
+
+<a class="tool"
+href="https://www.ilovepdf.com/compress_pdf">
 Compress PDF
+</a>
+
+<a class="tool"
+href="https://imageresizer.com/image-compressor">
 Compress Image
+</a>
+
+<a class="tool"
+href="https://www.ilovepdf.com/">
 I LOVE PDF
-ध्यान दें: कुछ सरकारी links समय के साथ बदल या expire हो सकते हैं।
-THE CYBER POINT CAFE | Shahzada Rock | ☎ 8540854630 | सेवा ही हमारा उद्देश्य है
+</a>
+
+</section>
+
+
+<div class="note">
+
+<b>ध्यान दें:</b>
+कुछ सरकारी links समय के साथ बदल या expire हो सकते हैं।
+
+</div>
+
+</main>
+
+
+<footer id="contact">
+
+THE CYBER POINT CAFE |
+Shahzada Rock |
+☎ 8540854630 |
+सेवा ही हमारा उद्देश्य है
+
+</footer>
+
+
+<script>
+
+const PASSWORD="Rock#143";
+
+const input=document.getElementById("sitePassword");
+
+const btn=document.getElementById("loginBtn");
+
+const msg=document.getElementById("loginMsg");
+
+
+function unlock(){
+
+if(input.value===PASSWORD){
+
+document.getElementById("loginGate").remove();
+
+}else{
+
+msg.textContent="पासवर्ड गलत है";
+
+input.select();
+
+}
+
+}
+
+
+btn.onclick=unlock;
+
+
+input.onkeydown=e=>{
+
+if(e.key==="Enter") unlock();
+
+};
+
+</script>
+
+</body>
+</html>
